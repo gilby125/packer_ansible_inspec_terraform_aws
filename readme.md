@@ -33,11 +33,11 @@ The end result is a simple Hello World script running on an EC2 instance on AWS.
 
 Use the following steps to create a new user in your AWS account and give it permission to create EC2 instances and Route53 zones. This will be used by Packer and Terraform to create an AMI and an EC2 instance.
 
-* `aws iam create-user --user-name example`
-* `aws iam create-access-key --user-name example`
+* `aws2 iam create-user --user-name example`
+* `aws2 iam create-access-key --user-name example`
 * ( Make sure to save the AccessKeyId and SecretAccessKey from the output)
-* `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --user-name example`
-* `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonRoute53FullAccess --user-name example`
+* `aws2 iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --user-name example`
+* `aws2 iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonRoute53FullAccess --user-name example`
 * Create a file at ~/.aws/credentials with the following content: 
 
 ```
